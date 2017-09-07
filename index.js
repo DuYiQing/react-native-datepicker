@@ -48,6 +48,7 @@ class DatePicker extends Component {
     this.onDatetimePicked = this.onDatetimePicked.bind(this);
     this.onDatetimeTimePicked = this.onDatetimeTimePicked.bind(this);
     this.setModalVisible = this.setModalVisible.bind(this);
+    this.animationFinished = this.animationFinished.bind(this);
   }
 
   componentWillMount() {
@@ -86,6 +87,7 @@ class DatePicker extends Component {
         }
       ).start(() => {
         this.setState({modalVisible: visible});
+        this.animationFinished();
       });
     }
   }
@@ -120,6 +122,12 @@ class DatePicker extends Component {
 
     if (typeof this.props.onCloseModal === 'function') {
       this.props.onCloseModal();
+    }
+  }
+
+  animationFinished() {
+    if (typeof this.props.animationFinished === 'function') {
+      this.props.animationFinished();
     }
   }
 
@@ -471,7 +479,8 @@ DatePicker.propTypes = {
   onPressMask: PropTypes.func,
   placeholder: PropTypes.string,
   modalOnResponderTerminationRequest: PropTypes.func,
-  is24Hour: PropTypes.bool
+  is24Hour: PropTypes.bool,
+  animationFinished:PropTypes.func,
 };
 
 export default DatePicker;
