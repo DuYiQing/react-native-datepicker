@@ -400,7 +400,7 @@ class DatePicker extends Component {
                         onDateChange={this.onDateChange}
                         minuteInterval={minuteInterval}
                         timeZoneOffsetInMinutes={timeZoneOffsetInMinutes}
-                        style={[Style.datePicker, customStyles.datePicker]}
+                        style={customStyles.datePicker}
                       />
                     </View>
                     <TouchableComponent
