@@ -58,10 +58,10 @@ let style = StyleSheet.create({
     color: '#666'
   },
   btnCancel: {
-    left: 0
+    paddingVertical: 0,
   },
   btnConfirm: {
-    right: 0
+    paddingVertical: 0,
   },
   datePicker: {
     marginTop: 42,
